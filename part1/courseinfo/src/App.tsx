@@ -1,4 +1,7 @@
-import styled from "styled-components";
+import Header from "./Header";
+import Content from './components/Content'
+import Total from './Total'
+
 
 const App = () => {
   const course = "Half Stack application development";
@@ -10,24 +13,19 @@ const App = () => {
   const exercises3 = 14;
 
   return (
-    <Container>
-      <H1>{course}</H1>
-      <P>
-        {part1} {exercises1}
-      </P>
-      <P>
-        {part2} {exercises2}
-      </P>
-      <P>
-        {part3} {exercises3}
-      </P>
-      <P>Number of exercises {exercises1 + exercises2 + exercises3}</P>
-    </Container>
+    <div>
+      <Header course={course} />
+      <Content
+        part1={part1}
+        part2={part2}
+        part3={part3}
+        exercises1={exercises1}
+        exercises2={exercises2}
+        exercises3={exercises3}
+      />
+     <Total total={exercises1 + exercises2 + exercises3} />
+    </div>
   );
 };
 
 export default App;
-
-const P = styled.p``;
-const Container = styled.div``;
-const H1 = styled.h1``;
